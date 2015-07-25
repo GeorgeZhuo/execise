@@ -1,0 +1,143 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Args	src/forest.cpp	/^struct Args {\/\/okay$/;"	s	file:
+BaseNode	include/node.h	/^class BaseNode{$/;"	c
+BranchNode	include/node.h	/^class BranchNode: public BaseNode{$/;"	c
+BranchNode	src/node.cpp	/^BranchNode::BranchNode(){$/;"	f	class:BranchNode
+BranchNode	src/node.cpp	/^BranchNode::BranchNode(float gain, int featIndex, float value,int depth, BaseNode *left, BaseNode *right){$/;"	f	class:BranchNode
+CC	Makefile	/^CC = g++$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -g -pthread -I.\/include -o$/;"	m
+CLASSES_NUM	main.cpp	/^int CLASSES_NUM = 27;\/\/26 classes $/;"	v
+EXE	Makefile	/^EXE = rf$/;"	m
+FILEDIR	Makefile	/^FILEDIR = \/home\/eminem\/dataMining\/project2$/;"	m
+FOREST_H	include/forest.h	8;"	d
+Forest	include/forest.h	/^class Forest{$/;"	c
+Forest	src/forest.cpp	/^Forest::Forest() {\/\/okay$/;"	f	class:Forest
+Forest	src/forest.cpp	/^Forest::Forest(int n_trees, int n_features, bool REGRESSION) {\/\/okay$/;"	f	class:Forest
+LeafNode	include/node.h	/^class LeafNode: public BaseNode{$/;"	c
+LeafNode	src/node.cpp	/^LeafNode::LeafNode(){$/;"	f	class:LeafNode
+LeafNode	src/node.cpp	/^LeafNode::LeafNode(float distribution, int depth){$/;"	f	class:LeafNode
+MATRIX_H	include/matrix.h	8;"	d
+MAX_DEPTH	main.cpp	/^int MAX_DEPTH = 5;$/;"	v
+MINIMUM_GAIN	main.cpp	/^float MINIMUM_GAIN = 0.1;$/;"	v
+Matrix	include/matrix.h	/^class Matrix{$/;"	c
+Matrix	src/matrix.cpp	/^Matrix::Matrix(){$/;"	f	class:Matrix
+NODE_H	include/node.h	8;"	d
+ParallelForest	include/forest.h	/^class ParallelForest: public Forest{$/;"	c
+ParallelForest	src/forest.cpp	/^ParallelForest::ParallelForest() {\/\/okay$/;"	f	class:ParallelForest
+ParallelForest	src/forest.cpp	/^ParallelForest::ParallelForest(int n_trees, int n_features, int n_threads, bool REGRESSION) {$/;"	f	class:ParallelForest
+REGRESSION	include/forest.h	/^	bool REGRESSION;$/;"	m	class:Forest
+SOURCE	Makefile	/^SOURCE = main.cpp src\/node.cpp src\/tree.cpp src\/forest.cpp src\/matrix.cpp src\/statistic.cpp src\/pthread_pool.c$/;"	m
+STATISTIC_H	include/statistic.h	8;"	d
+TREE_H	include/tree.h	9;"	d
+Tree	include/tree.h	/^class Tree{$/;"	c
+Tree	src/tree.cpp	/^Tree::Tree(){$/;"	f	class:Tree
+UTILITY_H	include/utility.h	9;"	d
+add_list	src/statistic.cpp	/^void add_list(vector<int> &list1, vector<int> &list2) {$/;"	f
+arg	src/pthread_pool.c	/^	void *arg;$/;"	m	struct:pool_queue	file:
+basic_linear_regression	src/statistic.cpp	/^void basic_linear_regression(const vector<float> &x, const vector<float> &y, float &m, float &b) {$/;"	f
+buildTree	src/tree.cpp	/^void Tree::buildTree(Matrix &dataSet, vector<float> &labels, vector<int> featIndex, int n_columns){$/;"	f	class:Tree
+buildTree_recursive	src/tree.cpp	/^BaseNode* Tree::buildTree_recursive(Matrix &dataSet, vector<float> &labels, vector<int> featIndex, int n_columns, int depth) {$/;"	f	class:Tree
+calcGain	src/tree.cpp	/^float Tree::calcGain(float preVar, vector<float> &left, vector<float> &right) {$/;"	f	class:Tree
+cancelled	src/pthread_pool.c	/^	char cancelled;$/;"	m	struct:pool	file:
+chooseBestSplit_reg	src/tree.cpp	/^void Tree::chooseBestSplit_reg(Matrix &dataSet, vector<float> &labels, vector<int> &featIndex, float &maxGain, int &splitIndex, float &splitThreshold) {$/;"	f	class:Tree
+column	src/matrix.cpp	/^vector<float> Matrix::column(int index) {\/\/okay$/;"	f	class:Matrix
+columnLabels	include/matrix.h	/^	vector<string> columnLabels;$/;"	m	class:Matrix
+columns	src/matrix.cpp	/^int Matrix::columns() {\/\/okay$/;"	f	class:Matrix
+count	src/node.cpp	/^int BranchNode::count(){$/;"	f	class:BranchNode
+count	src/node.cpp	/^int LeafNode::count(){$/;"	f	class:LeafNode
+crossPredict	src/forest.cpp	/^void ParallelForest::crossPredict(Matrix &dataSet, vector<float> &labels) {$/;"	f	class:ParallelForest
+depth	include/node.h	/^	int depth;$/;"	m	class:BranchNode
+depth	include/node.h	/^	int depth;$/;"	m	class:LeafNode
+discrete_p_values	src/statistic.cpp	/^vector<float> discrete_p_values(const vector<float> &list, int num_classes) {\/\/okay$/;"	f
+distribution	include/node.h	/^	float distribution;$/;"	m	class:LeafNode
+e	src/forest.cpp	18;"	d	file:
+elements	include/matrix.h	/^	vector< vector<float> > elements;$/;"	m	class:Matrix
+end	src/pthread_pool.c	/^	struct pool_queue *end;$/;"	m	struct:pool	typeref:struct:pool::pool_queue	file:
+featIndex	include/node.h	/^	int featIndex;$/;"	m	class:BranchNode
+findPotentialSplit	src/tree.cpp	/^vector<float> Tree::findPotentialSplit(vector<float> &X, vector<float> &Y) {$/;"	f	class:Tree
+findSplitPoint	src/tree.cpp	/^vector<float> Tree::findSplitPoint(vector<float> &X, vector<float> &Y) {$/;"	f	class:Tree
+fn	src/pthread_pool.c	/^	void *(*fn)(void *);$/;"	m	struct:pool	file:
+free	src/pthread_pool.c	/^	char free;$/;"	m	struct:pool_queue	file:
+gain	include/node.h	/^	float gain;$/;"	m	class:BranchNode
+getCount	src/tree.cpp	/^int Tree::getCount(){$/;"	f	class:Tree
+init	src/forest.cpp	/^void Forest::init(int n_trees, int n_features, bool REGRESSION) {\/\/okay$/;"	f	class:Forest
+inner_product	src/statistic.cpp	/^float inner_product(const vector<float>& list1, const vector<float> &list2) {$/;"	f
+join	include/utility.h	/^string inline join(vector<T> &list, const char delimiter) {$/;"	f
+labels	src/forest.cpp	/^	vector<float> *labels;$/;"	m	struct:Args	file:
+left	include/node.h	/^	BaseNode *left;$/;"	m	class:BranchNode
+load	src/matrix.cpp	/^void Matrix::load(string filename, bool has_column_labels, bool has_row_labels){\/\/okay$/;"	f	class:Matrix
+main	main.cpp	/^int main(int argc, char *argv[]){$/;"	f
+matrix	src/forest.cpp	/^	Matrix *matrix;$/;"	m	struct:Args	file:
+max_index	include/statistic.h	/^int max_index(vector<T> list) {$/;"	f
+mean	src/statistic.cpp	/^float mean(const vector<float> &list) {$/;"	f
+merge	include/utility.h	/^vector<int> inline merge(vector<int> a, vector<int> b) {$/;"	f
+merge_rows	src/matrix.cpp	/^void Matrix::merge_rows(Matrix &otherMat) {$/;"	f	class:Matrix
+mode	src/statistic.cpp	/^float mode(const vector<float> &array) {$/;"	f
+n_columns	src/forest.cpp	/^	int *n_columns;$/;"	m	struct:Args	file:
+n_features	include/forest.h	/^	int n_features;$/;"	m	class:Forest
+n_features	main.cpp	/^int n_features = 30;$/;"	v
+n_threads	include/forest.h	/^	int n_threads;$/;"	m	class:ParallelForest
+n_threads	main.cpp	/^int n_threads = 16;\/\/default parameters$/;"	v
+n_trees	include/forest.h	/^	int n_trees;$/;"	m	class:Forest
+n_trees	main.cpp	/^int n_trees = 100;$/;"	v
+next	src/pthread_pool.c	/^	struct pool_queue *next;$/;"	m	struct:pool_queue	typeref:struct:pool_queue::pool_queue	file:
+nthreads	src/pthread_pool.c	/^	unsigned int nthreads;$/;"	m	struct:pool	file:
+operator +	include/statistic.h	/^vector<T> operator+(const vector<T> &a, const vector<T> &b){$/;"	f
+operator []	src/matrix.cpp	/^vector<float>& Matrix::operator[](int i) {\/\/okay$/;"	f	class:Matrix
+pairCompare	include/utility.h	/^bool pairCompare(const pair<T, T> &firstElem, const pair<T, T> &secondElem) {$/;"	f
+pool	src/pthread_pool.c	/^struct pool {$/;"	s	file:
+pool_end	src/pthread_pool.c	/^void pool_end(void *pool) {$/;"	f
+pool_enqueue	src/pthread_pool.c	/^void pool_enqueue(void *pool, void *arg, char free) {$/;"	f
+pool_queue	src/pthread_pool.c	/^struct pool_queue {$/;"	s	file:
+pool_start	src/pthread_pool.c	/^void * pool_start(void * (*thread_func)(void *), unsigned int threads) {$/;"	f
+pool_wait	src/pthread_pool.c	/^void pool_wait(void *pool) {$/;"	f
+predict	src/forest.cpp	/^vector<int> Forest::predict(Matrix &dataSet, string resultfile) {\/\/okay$/;"	f	class:Forest
+predict	src/node.cpp	/^float BranchNode::predict(vector<float> &row){$/;"	f	class:BranchNode
+predict	src/node.cpp	/^float LeafNode::predict(vector<float> &row){$/;"	f	class:LeafNode
+predict	src/tree.cpp	/^float Tree::predict(vector<float> &row){$/;"	f	class:Tree
+predictRow	src/forest.cpp	/^int Forest::predictRow(vector<float> &row) { \/\/okay$/;"	f	class:Forest
+q	src/pthread_pool.c	/^	struct pool_queue *q;$/;"	m	struct:pool	typeref:struct:pool::pool_queue	file:
+q_cnd	src/pthread_pool.c	/^	pthread_cond_t q_cnd;$/;"	m	struct:pool	file:
+q_mtx	src/pthread_pool.c	/^	pthread_mutex_t q_mtx;$/;"	m	struct:pool	file:
+range	include/utility.h	/^vector<int> inline range(int start, int stop = -1, int step = 1) {$/;"	f
+remaining	src/pthread_pool.c	/^	unsigned int remaining;$/;"	m	struct:pool	file:
+right	include/node.h	/^	BaseNode *right;$/;"	m	class:BranchNode
+root	include/tree.h	/^	BaseNode *root;$/;"	m	class:Tree
+rowLabels	include/matrix.h	/^	vector<string> rowLabels;$/;"	m	class:Matrix
+rows	src/matrix.cpp	/^int Matrix::rows() {\/\/okay$/;"	f	class:Matrix
+sample	include/statistic.h	/^void sample(vector<T> sampling_list, int n, vector<T> &result_list) {$/;"	f
+sample_with_left	include/statistic.h	/^void sample_with_left(vector<T> sampling_list, int n, vector<T> &result_list, vector<T> &left_list) {$/;"	f
+sample_with_replacement	include/statistic.h	/^void sample_with_replacement(vector<T> sampling_list, int n, vector<T> &result_list) {$/;"	f
+shuffled	src/matrix.cpp	/^Matrix Matrix::shuffled() {$/;"	f	class:Matrix
+slice	include/utility.h	/^vector<T> inline slice(vector<T> list, int start = 0, int end = -1, int step = 1) {$/;"	f
+softMax	src/forest.cpp	/^void ParallelForest::softMax(Matrix &trainData, vector<vector<float> > &softmax) {\/\/okay$/;"	f	class:ParallelForest
+split	src/matrix.cpp	/^void Matrix::split(int columnIndex, float value, Matrix &subm1, Matrix &subm2) {$/;"	f	class:Matrix
+splitByThreshold	src/tree.cpp	/^void Tree::splitByThreshold(vector<float> &curColumn, vector<float> &labels, vector<float> &left, vector<float> &right, float value){$/;"	f	class:Tree
+splitRowAndLabel	src/matrix.cpp	/^void Matrix::splitRowAndLabel(int columnIndex, float value, Matrix &subm1, Matrix &subm2, vector<float> &labels, vector<float> &l1, vector<float> &l2) {$/;"	f	class:Matrix
+split_string	include/utility.h	/^vector<string> inline split_string(const string &source, const char *delimiter = ",", bool keepEmpty = false) {$/;"	f
+submatrix	src/matrix.cpp	/^Matrix Matrix::submatrix(vector<int> rows, vector<int> columns){\/\/okay$/;"	f	class:Matrix
+subset	src/forest.cpp	/^	vector<int> *subset;$/;"	m	struct:Args	file:
+sum	src/statistic.cpp	/^float sum(const vector<float> &list){$/;"	f
+sum_of_square_error	src/statistic.cpp	/^float sum_of_square_error(const vector<float> &x, const vector<float> &y, float m, float b) {$/;"	f
+sum_squared	src/statistic.cpp	/^float sum_squared(const vector<float> &list) {$/;"	f
+test_regression	src/statistic.cpp	/^void test_regression() {$/;"	f
+thread	src/pthread_pool.c	/^static void * thread(void *arg) {$/;"	f	file:
+threads	src/pthread_pool.c	/^	pthread_t threads[1];$/;"	m	struct:pool	file:
+train	src/forest.cpp	/^void Forest::train(Matrix &dataSet) {\/\/fix me !!!$/;"	f	class:Forest
+train	src/forest.cpp	/^void ParallelForest::train(Matrix &dataSet) {\/\/okay$/;"	f	class:ParallelForest
+train_regression	src/forest.cpp	/^void ParallelForest::train_regression(Matrix &dataSet, vector<float> &labels, int class_num) {\/\/okay$/;"	f	class:ParallelForest
+training_thread	src/forest.cpp	/^void *training_thread(void* void_ptr) {\/\/ okay$/;"	f
+tree	src/forest.cpp	/^	Tree *tree;$/;"	m	struct:Args	file:
+trees	include/forest.h	/^	vector<vector<Tree> > trees;$/;"	m	class:Forest
+unzip	include/utility.h	/^void unzip(vector<pair<T, T> > &zipped, vector<T> &A, vector<T> &B) {$/;"	f
+value	include/node.h	/^	float value;$/;"	m	class:BranchNode
+variance	src/statistic.cpp	/^float variance(const vector<float> &list) {$/;"	f
+zip	include/utility.h	/^void zip(vector<T> &A, vector<T> &B, vector<pair<T, T> > &zipped) {$/;"	f
+~BranchNode	src/node.cpp	/^BranchNode::~BranchNode(){$/;"	f	class:BranchNode
+~LeafNode	src/node.cpp	/^LeafNode::~LeafNode(){$/;"	f	class:LeafNode
+~Tree	src/tree.cpp	/^Tree::~Tree(){$/;"	f	class:Tree

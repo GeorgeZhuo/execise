@@ -1,0 +1,30 @@
+## Pintos
+### project 1: Thread
+Project 1 主要由两部分组成，一是实现timer_sleep这个函数的功能，二是实现
+#### 1 Alarm Clock
+
+#### 2 Priority Scheduling
+实现优先级调度
+如果当前加入到就绪队列中的线程比当前正在执行的线程的优先级高的话，应该立即将CPU时间分给新加入的线程。同样，线程在等待时，高优先级的线程应该立即被唤醒。一个线程如果降低了它的优先级，那么应该立即将CPU腾出来。
+线程的优先级在thread.h中定义，PRI_MIN(0)到PRI_MAX(63)，０代表低优先级，63代表高优先级。初始化线程的优先级在作为参数传递给thread_create()时完成，默认下设置为PRI_DEFAULT(31).
+一个问题就是当一个高优先级的线程在等待一个由低优先级线程拥有的锁时，由于低优先级的线程没有机会获得CPU时间，这样都导致高优先级的线程也没有机会获得CPU.可行的解决方法就是高优先级的线程先将它的优先级捐献给底优先级的线程，等到它释放了锁，再将优先级捐献回来。但是在实现的时候，要考虑所有的情况，特别是嵌套的情况。只需要实现lock的情况，其他可以不用考虑。
+还需要实现下面的函数：
+thread_set_priority()
+    将当前线程的优先级设为新优先级，如果新优先级不是最高的话，让出CPU.
+thread_get_priority()
+    返回当前线程的优先级，如果是在优先级捐献中，返回比较好的优先级。
+### 3 Advanced Scheduler
+实现一个类似于BSD scheduler的多层反馈队列调度器来减少平均响应时间。和优先级调度一样，高级调度器也是基于优先级选择线程。但是，不是用优先级捐献来实现的。实现在Pintos系统启动时，能够让其他人通过添加内核选项来调度方式的调度算法策略。当BSD scheduler启动时，线程不再控制他们的优先级，通过thread_create传递的参数应该被忽略。同样，thread_set_priority和thread_get_priority也应该只是返回当前线程的优先级，而不做其他动作。
+1. Niceness
+线程的优先级是由调度用下面的公式动态决定的。但是，每个线程都可以用一个整数nice来描述。
+nice等于零时并不影响优先级，当nice为正数时，最大为20，它会降低线程的优先级并造成线程放弃CPU时间。当nice为负数时，最小为-20,它趋向于从其他线程中抢占到CPU时间。线程初始时，nice值为零。其他线程的nice值继承自其父线程。
+由如下函数实现nice的功能：
+thread_get_nice()
+    返回当前线程的nice值
+thread_set_nice()
+    设置当前线程的nice值，并且重新计算当前线程的优先级。如果，当前线程的优先级不再是最高的，让出CPU时间。
+2. Calculate Priority
+    
+3. Calculate recent_cpu
+4. Calculate load_avg
+5. Fixed point real arithmetic
